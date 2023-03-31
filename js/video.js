@@ -20,44 +20,46 @@ document.querySelector("#pause").addEventListener("click", function() {
 });
 
 document.querySelector("#slower").addEventListener("click", function() {
-	slowRate += 1;
-	let speed = 1;
-	if (slowRate > 0){
-		for (let i = 0; i < slowRate; i++){
-			speed *= 0.95;
-		}
-	} else {
-		for (let i = 0; i > slowRate; i--){
-			speed *= (100/95);
-		}
-	}
-	video.playbackRate = speed;
+	// slowRate += 1;
+	// let speed = 1;
+	// if (slowRate > 0){
+	// 	for (let i = 0; i < slowRate; i++){
+	// 		speed *= 0.95;
+	// 	}
+	// } else {
+	// 	for (let i = 0; i > slowRate; i--){
+	// 		speed *= (100/95);
+	// 	}
+	// }
+	video.playbackRate *= 0.95;
 	console.log("New speed is "+video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
-	slowRate -= 1;
-	let speed = 1;
-	if (slowRate > 0){
-		for (let i = 0; i < slowRate; i++){
-			speed *= 0.95;
-		}
-	} else {
-		for (let i = 0; i > slowRate; i--){
-			speed *= (100/95);
-		}
-	}
-	video.playbackRate = speed;
+	// slowRate -= 1;
+	// let speed = 1;
+	// if (slowRate > 0){
+	// 	for (let i = 0; i < slowRate; i++){
+	// 		speed *= 0.95;
+	// 	}
+	// } else {
+	// 	for (let i = 0; i > slowRate; i--){
+	// 		speed *= (100/95);
+	// 	}
+	// }
+	video.playbackRate *= (100/95);
 	console.log("New speed is " + video.playbackRate);
 });
 
 document.querySelector("#skip").addEventListener("click", function(){
-	console.log(video.currentTime);
+	console.log("Original location "+ video.currentTime);
 	if (video.currentTime > video.duration - 15){
+		console.log("Going back to beginning");
 		video.currentTime = 0;
 	}else{
 		video.currentTime += 15;
 	}
+	console.log("New location "+ video.currentTime);
 })
 
 document.querySelector("#mute").addEventListener("click",function(){
