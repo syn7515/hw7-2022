@@ -20,39 +20,17 @@ document.querySelector("#pause").addEventListener("click", function() {
 });
 
 document.querySelector("#slower").addEventListener("click", function() {
-	// slowRate += 1;
-	// let speed = 1;
-	// if (slowRate > 0){
-	// 	for (let i = 0; i < slowRate; i++){
-	// 		speed *= 0.95;
-	// 	}
-	// } else {
-	// 	for (let i = 0; i > slowRate; i--){
-	// 		speed *= (100/95);
-	// 	}
-	// }
-	video.playbackRate *= 0.95;
+	video.playbackRate *= 0.9;
 	console.log("Playback speed is "+video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
-	// slowRate -= 1;
-	// let speed = 1;
-	// if (slowRate > 0){
-	// 	for (let i = 0; i < slowRate; i++){
-	// 		speed *= 0.95;
-	// 	}
-	// } else {
-	// 	for (let i = 0; i > slowRate; i--){
-	// 		speed *= (100/95);
-	// 	}
-	// }
-	video.playbackRate /= 0.95;
-	console.log("Playback speed is "+video.playbackRate);
+	video.playbackRate /= 0.9;
+	console.log("Playback speed is "+ video.playbackRate);
 });
 
 document.querySelector("#skip").addEventListener("click", function(){
-	video.currentTime += 15;
+	video.currentTime += 10;
 	if (video.currentTime >= video.duration) {
 		video.currentTime = 0;
 	}
