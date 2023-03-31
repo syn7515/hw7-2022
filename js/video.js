@@ -20,7 +20,6 @@ document.querySelector("#pause").addEventListener("click", function() {
 });
 
 document.querySelector("#slower").addEventListener("click", function() {
-	console.log("Slow down video");
 	slowRate += 1;
 	let speed = 1;
 	if (slowRate > 0){
@@ -33,11 +32,10 @@ document.querySelector("#slower").addEventListener("click", function() {
 		}
 	}
 	video.playbackRate = speed;
-	console.log(video.playbackRate);
+	console.log("New speed is "+video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
-	console.log("Speed Up video");
 	slowRate -= 1;
 	let speed = 1;
 	if (slowRate > 0){
@@ -50,11 +48,11 @@ document.querySelector("#faster").addEventListener("click", function() {
 		}
 	}
 	video.playbackRate = speed;
-	console.log(video.playbackRate);
+	console.log("New speed is " + video.playbackRate);
 });
 
 document.querySelector("#skip").addEventListener("click", function(){
-	console.log("Skip ahead 15 sec");
+	console.log(video.currentTime);
 	if (video.currentTime > video.duration - 15){
 		video.currentTime = 0;
 	}else{
