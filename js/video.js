@@ -32,7 +32,7 @@ document.querySelector("#slower").addEventListener("click", function() {
 	// 	}
 	// }
 	video.playbackRate *= 0.95;
-	console.log(video.playbackRate);
+	console.log("Playback speed is "+video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
@@ -47,17 +47,16 @@ document.querySelector("#faster").addEventListener("click", function() {
 	// 		speed *= (100/95);
 	// 	}
 	// }
-	video.playbackRate *= (100/95);
-	console.log(video.playbackRate);
+	video.playbackRate /= 0.95;
+	console.log("Playback speed is "+video.playbackRate);
 });
 
 document.querySelector("#skip").addEventListener("click", function(){
-	if (video.currentTime >= video.duration - 15){
+	video.currentTime += 15;
+	if (video.currentTime >= video.duration) {
 		video.currentTime = 0;
-	}else{
-		video.currentTime += 15;
 	}
-	console.log(video.currentTime);
+	console.log("Current time is " + video.currentTime)
 })
 
 document.querySelector("#mute").addEventListener("click",function(){
